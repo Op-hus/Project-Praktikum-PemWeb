@@ -1,0 +1,104 @@
+:root {
+    --ungu: #533E85;
+    --biru: #488FB1;
+    --toska: #4FD3C4;
+    --mint: #C1F8CF;
+}
+
+body.bg-mint {
+    background-color: #eefaf1;
+}
+
+body.login-bg {
+    background: linear-gradient(135deg, var(--ungu), var(--biru), var(--toska));
+}
+
+.navbar-sb {
+    background-color: var(--ungu);
+}
+
+.navbar-sb .navbar-brand {
+    color: var(--mint) !important;
+    font-weight: bold;
+}
+
+.card-sb {
+    background: #fff;
+    border-radius: 12px;
+    border-top: 4px solid var(--ungu);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.judul-sb {
+    color: var(--ungu);
+    font-weight: 700;
+}
+
+.btn-ungu {
+    background-color: var(--ungu);
+    color: #fff;
+    border: none;
+}
+
+.btn-ungu:hover {
+    background-color: #3e2d66;
+    color: #fff;
+}
+
+.btn-biru {
+    background-color: var(--biru);
+    color: #fff;
+    border: none;
+}
+
+.btn-biru:hover {
+    background-color: #36718d;
+    color: #fff;
+}
+
+.btn-toska {
+    background-color: var(--toska);
+    color: #1f1b2e;
+    font-weight: 600;
+    border: none;
+}
+
+.table-sb thead th {
+    background-color: var(--ungu);
+    color: #fff;
+}
+
+.table-sb tbody tr:hover {
+    background-color: var(--mint);
+}
+
+.badge-toska {
+    background-color: var(--toska);
+    color: #1f1b2e;
+}
+
+.badge-biru {
+    background-color: var(--biru);
+    color: #fff;
+}
+
+.stat-ungu {
+    background-color: var(--ungu);
+    color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.stat-biru {
+    background-color: var(--biru);
+    color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.stat-toska {
+    background-color: var(--toska);
+    color: #1f1b2e;
+    border-radius: 10px;
+    padding: 15px;
+}

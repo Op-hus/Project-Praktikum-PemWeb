@@ -16,7 +16,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `nama`, `email`, `password`, `role`) VALUES
 (1, 'Admin Utama', 'admin@bantu.com', md5('admin123'), 'admin'),
 (2, 'Petugas Verifikasi', 'petugas@bantu.com', md5('petugas123'), 'petugas'),
-(3, 'Bapak Budi (Warga)', 'budi@warga.com', md5('warga123'), 'warga');
+(3, 'Bapak Budi (Warga)', 'budi@bantu.com', md5('budi123'), 'warga');
 
 CREATE TABLE `kategori_rentan` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
