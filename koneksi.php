@@ -1,0 +1,1 @@
+<?php $conn = mysqli_connect("localhost", "root", "", "setarabantu_db"); if (!$conn) die("Koneksi gagal"); ?>
