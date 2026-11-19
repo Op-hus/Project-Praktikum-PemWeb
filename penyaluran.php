@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 include 'header.php';
 include 'koneksi.php';
@@ -28,3 +29,42 @@ $q = mysqli_query($conn, "SELECT py.id, py.jadwal, py.status, py.tanggal_diterim
 <div class="table-responsive"><table class="table table-bordered table-sb align-middle"><thead><tr><th>#</th><th>Skor</th><th>Penerima</th><th>Kategori</th><th>Program</th><th>Jadwal</th><th>Status</th><th>Aksi</th></tr></thead><tbody>
 <?php $no=1; while ($d=mysqli_fetch_assoc($q)): ?><tr><td><?= $no++ ?></td><td><span class="badge badge-toska"><?= (int)$d['skor_prioritas'] ?></span></td><td><?= e_sal($d['nama']) ?></td><td><?= e_sal($d['nama_kategori']) ?></td><td><?= e_sal($d['nama_program']) ?></td><td><?= e_sal($d['jadwal']) ?></td><td><?= $d['status']==='belum' ? '<span class="badge bg-warning text-dark">Belum diterima</span>' : '<span class="badge bg-success">Sudah diterima</span><br><small>'.e_sal($d['tanggal_diterima']).'</small>' ?></td><td><?php if($d['status']==='belum'): ?><form method="post"><input type="hidden" name="id" value="<?= (int)$d['id'] ?>"><button name="selesai" class="btn btn-sm btn-toska" onclick="return confirm('Tandai bantuan sudah diterima?')">Tandai diterima</button></form><?php else: ?>-<?php endif; ?></td></tr><?php endwhile; ?>
 <?php if ($no===1): ?><tr><td colspan="8" class="text-center text-muted">Belum ada data penyaluran.</td></tr><?php endif; ?></tbody></table></div></div><?php include 'footer.php'; ?>
+=======
+<?php 
+include 'header.php';
+include 'koneksi.php';
+
+if ($_SESSION['role'] == 'warga') exit;
+if (isset($_POST['selesai'])) mysqli_query($conn, "UPDATE penyaluran SET status='sudah diterima', tanggal_diterima=CURDATE() WHERE id=" . (int)$_POST['id']);
+?>
+<div class="card-sb p-4">
+    <h4 class="judul-sb mb-3">Antrean Penyaluran</h4>
+    <table class="table table-bordered table-sb">
+        <thead>
+            <tr>
+                <th>Skor</th>
+                <th>Penerima</th>
+                <th>Program</th>
+                <th>Jadwal</th>
+                <th>Status</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody><?php $q = mysqli_query($conn, "SELECT py.id, py.jadwal, py.status, v.skor_prioritas, u.nama, pr.nama_program FROM penyaluran py JOIN pengajuan pg ON py.pengajuan_id=pg.id JOIN verifikasi v ON pg.id=v.pengajuan_id JOIN penerima p ON pg.penerima_id=p.id JOIN users u ON p.user_id=u.id JOIN program_bantuan pr ON pg.program_id=pr.id ORDER BY v.skor_prioritas DESC, py.jadwal ASC");
+                while ($d = mysqli_fetch_assoc($q)): ?>
+                <tr>
+                    <td><span class="badge badge-toska"><?= $d['skor_prioritas'] ?></span></td>
+                    <td><?= $d['nama'] ?></td>
+                    <td><?= $d['nama_program'] ?></td>
+                    <td><?= $d['jadwal'] ?></td>
+                    <td><?= $d['status'] ?></td>
+                    <td><?php if ($d['status'] == 'belum'): ?><form method="POST"><input type="hidden" name="id" value="<?= $d['id'] ?>"><button type="submit" name="selesai" class="btn btn-sm btn-toska">Selesai</button></form><?php endif; ?></td>
+                </tr>
+            <?php endwhile; ?>
+        </tbody>
+    </table>
+</div>
+<?php 
+include 'footer.php'; 
+?>
+>>>>>>> 6fdaa30ab8cb39ee22bb8a97db164372eb7ef925

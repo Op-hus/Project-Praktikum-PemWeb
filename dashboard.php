@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 include 'header.php';
 include 'koneksi.php';
@@ -16,3 +17,45 @@ $terbaru=mysqli_query($conn,"SELECT pg.tanggal,u.nama,pr.nama_program,pg.status 
 <div class="row g-3 mb-4"><div class="col-md-4 col-lg-2"><div class="stat-ungu"><b><?= $total_program ?></b><span>Program</span></div></div><div class="col-md-4 col-lg-2"><div class="stat-biru"><b><?= $total_pengajuan ?></b><span>Total Pengajuan</span></div></div><div class="col-md-4 col-lg-2"><div class="stat-toska"><b><?= $menunggu ?></b><span>Menunggu</span></div></div><div class="col-md-4 col-lg-2"><div class="stat-ungu"><b><?= $disetujui ?></b><span>Disetujui</span></div></div><div class="col-md-4 col-lg-2"><div class="stat-toska"><b><?= $tersalurkan ?></b><span>Tersalurkan</span></div></div><div class="col-md-4 col-lg-2"><div class="stat-biru"><b><?= $ditolak ?></b><span>Ditolak</span></div></div></div>
 <div class="row g-4"><div class="col-lg-6"><h5 class="judul-sb">Distribusi Kelompok Rentan</h5><div class="table-responsive"><table class="table table-bordered table-sb"><thead><tr><th>Kategori</th><th>Bobot</th><th>Jumlah Warga</th></tr></thead><tbody><?php while($d=mysqli_fetch_assoc($kategori)): ?><tr><td><?= e_dash($d['nama_kategori']) ?></td><td><?= (int)$d['bobot_skor'] ?></td><td><?= (int)$d['jumlah'] ?></td></tr><?php endwhile; ?></tbody></table></div></div>
 <div class="col-lg-6"><h5 class="judul-sb">Pengajuan Terbaru</h5><div class="table-responsive"><table class="table table-bordered table-sb"><thead><tr><th>Tanggal</th><th>Warga</th><th>Program</th><th>Status</th></tr></thead><tbody><?php while($d=mysqli_fetch_assoc($terbaru)): ?><tr><td><?= e_dash($d['tanggal']) ?></td><td><?= e_dash($d['nama']) ?></td><td><?= e_dash($d['nama_program']) ?></td><td><?= e_dash(ucfirst($d['status'])) ?></td></tr><?php endwhile; ?><?php if(mysqli_num_rows($terbaru)===0): ?><tr><td colspan="4" class="text-center text-muted">Belum ada pengajuan.</td></tr><?php endif; ?></tbody></table></div></div></div></div><?php include 'footer.php'; ?>
+=======
+<?php 
+include 'header.php';
+include 'koneksi.php';
+
+$q1 = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as t FROM program_bantuan"));
+$q2 = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as t FROM pengajuan"));
+$q3 = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as t FROM pengajuan WHERE status='disetujui'"));
+?>
+<div class="card-sb p-4">
+    <h4 class="judul-sb mb-3">Dashboard & Laporan</h4>
+    <div class="row g-3 mb-4">
+        <div class="col-md-4">
+            <div class="stat-ungu"><b><?= $q1['t'] ?></b> Program Bantuan</div>
+        </div>
+        <div class="col-md-4">
+            <div class="stat-biru"><b><?= $q2['t'] ?></b> Total Pengajuan</div>
+        </div>
+        <div class="col-md-4">
+            <div class="stat-toska"><b><?= $q3['t'] ?></b> Pengajuan Disetujui</div>
+        </div>
+    </div>
+    <h5 class="judul-sb">Statistik Penerima per Kelompok Rentan</h5>
+    <table class="table table-bordered table-sb">
+        <thead>
+            <tr>
+                <th>Kategori</th>
+                <th>Jumlah Warga</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php $q = mysqli_query($conn, "SELECT k.nama_kategori, COUNT(p.id) as jml FROM penerima p JOIN kategori_rentan k ON p.kategori_id=k.id GROUP BY k.nama_kategori");
+                while ($d = mysqli_fetch_assoc($q)) 
+                    echo "<tr><td>{$d['nama_kategori']}</td><td>{$d['jml']}</td></tr>"; 
+            ?>
+        </tbody>
+    </table>
+</div>
+<?php 
+include 'footer.php'; 
+?>
+>>>>>>> 6fdaa30ab8cb39ee22bb8a97db164372eb7ef925
