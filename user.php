@@ -62,6 +62,7 @@ $e = isset($_GET['edit']) ? mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FRO
         </tbody>
     </table>
 </div>
+
 <?php 
 include 'footer.php'; 
 ?>
