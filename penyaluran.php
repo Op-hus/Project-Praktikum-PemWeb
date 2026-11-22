@@ -73,4 +73,3 @@ $q = mysqli_query($conn, "SELECT py.id, py.jadwal, py.status, py.tanggal_diterim
 <?php 
 include 'footer.php'; 
 ?>
->>>>>>> 6fdaa30ab8cb39ee22bb8a97db164372eb7ef925
