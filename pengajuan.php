@@ -2,11 +2,11 @@
 include 'header.php';
 include 'koneksi.php';
 
-if ($_SESSION['role'] != 'warga') 
+if ($role != 'warga') 
     exit;
 $cek_p = mysqli_query($conn, "SELECT id FROM penerima WHERE user_id='{$_SESSION['user_id']}'");
 if (mysqli_num_rows($cek_p) == 0) {
-    echo "<div class='alert alert-warning'>Isi menu Profil Warga terlebih dahulu!</div>";
+    echo "<div class='alert alert-warning'>Silakan lengkapi Profil Warga terlebih dahulu.</div>";
     include 'footer.php';
     exit;
 }

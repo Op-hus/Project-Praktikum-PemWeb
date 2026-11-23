@@ -2,7 +2,7 @@
 include 'header.php';
 include 'koneksi.php';
 
-if ($_SESSION['role'] != 'admin') 
+if ($role != 'admin') 
     exit;
 
 if (isset($_POST['simpan'])) {

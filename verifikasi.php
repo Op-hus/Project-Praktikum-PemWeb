@@ -2,7 +2,7 @@
 include 'header.php';
 include 'koneksi.php';
 
-if (!in_array($_SESSION['role'], ['admin', 'petugas'], true)) {
+if (!in_array($role, ['admin', 'petugas'], true)) {
     header('Location: dashboard.php');
     exit;
 }
@@ -86,7 +86,7 @@ $pengajuan = mysqli_query($conn, "SELECT pg.id, pg.tanggal, u.nama, k.nama_kateg
     WHERE pg.status = 'diajukan' ORDER BY pg.tanggal ASC, pg.id ASC");
 ?>
 
-<div class="card-sb p-4">
+<div class="row g-4"><div class="col-lg-8"><div class="card-sb p-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <div>
             <h4 class="judul-sb mb-1">Verifikasi & Prioritas</h4><small class="text-muted">Setujui pengajuan untuk menghitung skor dan membuat antrean penyaluran.</small>
@@ -135,9 +135,8 @@ $pengajuan = mysqli_query($conn, "SELECT pg.id, pg.tanggal, u.nama, k.nama_kateg
         </table>
     </div>
     <small class="text-muted">Rumus skor: bobot kategori + (tanggungan × 5, maksimal 30) + skor penghasilan (maksimal 20).</small>
-</div>
+</div></div><div class="col-lg-4"><div class="card-sb p-4 h-100"><div class="section-label mb-2">Penilaian transparan</div><h5 class="judul-sb">Kalkulator prioritas</h5><p class="text-muted small">Skor membantu petugas mengurutkan kebutuhan secara konsisten sesuai indikator kerentanan.</p><div class="p-3 rounded-3" style="background:var(--sb-mint)"><i class="bi bi-calculator fs-3" style="color:var(--sb-primary)"></i><p class="mb-0 mt-2 small fw-semibold">Kategori + tanggungan + penghasilan</p></div><hr><p class="small text-muted mb-0"><i class="bi bi-info-circle me-1"></i>Setiap persetujuan otomatis masuk antrean penyaluran.</p></div></div></div>
 
 <?php 
 include 'footer.php'; 
 ?>
->>>>>>> 6fdaa30ab8cb39ee22bb8a97db164372eb7ef925

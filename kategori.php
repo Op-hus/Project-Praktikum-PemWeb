@@ -1,8 +1,8 @@
-<?php 
+<?php
 include 'header.php';
 include 'koneksi.php';
 
-if ($_SESSION['role'] != 'admin') 
+if ($role != 'admin')
     exit;
 
 if (isset($_POST['tambah'])) mysqli_query($conn, "INSERT INTO kategori_rentan (nama_kategori, bobot_skor) VALUES ('{$_POST['nama']}', '{$_POST['bobot']}')");
@@ -40,6 +40,6 @@ if (isset($_GET['hapus'])) mysqli_query($conn, "DELETE FROM kategori_rentan WHER
         </tbody>
     </table>
 </div>
-<?php 
-include 'footer.php'; 
+<?php
+include 'footer.php';
 ?>

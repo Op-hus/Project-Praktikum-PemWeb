@@ -3,7 +3,7 @@ include 'header.php';
 include 'koneksi.php';
 
 $uid  = (int)$_SESSION['user_id'];
-$role = $_SESSION['role'];
+$role = $role ?? 'warga';
 
 if ($role == 'warga' && isset($_POST['simpan_profil'])) {
     $alamat = mysqli_real_escape_string($conn, $_POST['alamat']);
@@ -60,7 +60,14 @@ if (($role == 'admin' || $role == 'petugas') && isset($_GET['hapus'])) {
                 </select>
             </div>
         </div>
-        <button type="submit" name="simpan_profil" class="btn btn-sb-primary"><i class="fas fa-save me-1"></i> Simpan Data Penerima</button>
+        <div class="d-flex flex-wrap gap-2 align-items-center">
+            <button type="submit" name="simpan_profil" class="btn btn-sb-primary px-4">
+                <i class="fas fa-save me-1"></i> Simpan Data Warga
+            </button>
+            <button type="reset" class="btn btn-outline-secondary">
+                <i class="fas fa-undo me-1"></i> Reset Formulir
+            </button>
+        </div>
     </form>
 </div>
 

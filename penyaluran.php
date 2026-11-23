@@ -2,7 +2,7 @@
 include 'header.php';
 include 'koneksi.php';
 
-if (!in_array($_SESSION['role'], ['admin', 'petugas'], true)) {
+if (!in_array($role, ['admin', 'petugas'], true)) {
     header('Location: dashboard.php');
     exit;
 }
