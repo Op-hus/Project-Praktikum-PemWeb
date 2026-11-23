@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" fill="none">
+  <defs>
+    <linearGradient id="gradLogo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#533E85" />
+      <stop offset="50%" stop-color="#488FB1" />
+      <stop offset="100%" stop-color="#4FD3C4" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#533E85" flood-opacity="0.25" />
+    </filter>
+  </defs>
+  <!-- Icon Mark -->
+  <g transform="translate(6, 6)" filter="url(#shadow)">
+    <circle cx="26" cy="26" r="26" fill="url(#gradLogo)" />
+    <!-- Hands & Heart motif -->
+    <path d="M26 36s-9-5.5-9-12a5.5 5.5 0 0 1 9-4.2 5.5 5.5 0 0 1 9 4.2c0 6.5-9 12-9 12z" fill="#ffffff" />
+    <!-- Equality Bars underneath -->
+    <rect x="18" y="38" width="16" height="2.5" rx="1.25" fill="#C1F8CF" />
+    <rect x="20" y="42" width="12" height="2.5" rx="1.25" fill="#C1F8CF" />
+  </g>
+  <!-- Wordmark -->
+  <text x="70" y="34" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-size="24" font-weight="800" fill="#2D2B52" letter-spacing="-0.5">Setara<tspan fill="#488FB1">Bantu</tspan></text>
+  <text x="70" y="48" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-size="10" font-weight="600" fill="#7A7897" letter-spacing="0.5">INKLUSIF &bull; TEPAT SASARAN &bull; SDG 1 &amp; 10</text>
+</svg>

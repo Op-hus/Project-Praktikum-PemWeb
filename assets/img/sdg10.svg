@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <rect width="120" height="120" rx="16" fill="#DD1367" />
+  <text x="10" y="28" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="20" fill="#FFFFFF">10</text>
+  <text x="38" y="20" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="8.5" fill="#FFFFFF">BERKURANGNYA</text>
+  <text x="38" y="30" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="8.5" fill="#FFFFFF">KESENJANGAN</text>
+  <!-- Equality balance & arrows motif -->
+  <g transform="translate(25, 45)" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="35" cy="10" r="7" fill="#FFFFFF" stroke="none" />
+    <path d="M12 28 h46" />
+    <path d="M12 42 h46" />
+    <path d="M22 20 l-8 8 8 8" />
+    <path d="M48 34 l8 8-8 8" />
+  </g>
+</svg>

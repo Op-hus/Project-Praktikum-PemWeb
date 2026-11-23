@@ -2,7 +2,7 @@
 include 'header.php';
 include 'koneksi.php';
 
-if ($_SESSION['role'] != 'admin') 
+if ($role != 'admin') 
     exit;
 
 if (isset($_POST['simpan'])) {
@@ -62,6 +62,7 @@ $e = isset($_GET['edit']) ? mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FRO
         </tbody>
     </table>
 </div>
+
 <?php 
 include 'footer.php'; 
 ?>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" fill="none">
+  <defs>
+    <linearGradient id="boxGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F3F5FA"/>
+      <stop offset="100%" stop-color="#E2E7F1"/>
+    </linearGradient>
+  </defs>
+  <circle cx="160" cy="110" r="85" fill="#EEFAF1" />
+  <g transform="translate(90, 45)">
+    <!-- Folder / Document base -->
+    <rect x="25" y="30" width="90" height="70" rx="10" fill="url(#boxGrad)" stroke="#CAD5E8" stroke-width="2"/>
+    <path d="M25 45 L70 45 L80 55 L115 55" stroke="#CAD5E8" stroke-width="2" fill="none"/>
+    <circle cx="70" cy="72" r="18" fill="#FFFFFF" stroke="#488FB1" stroke-width="2"/>
+    <!-- Search / Question glass -->
+    <path d="M66 68 A 6 6 0 1 1 74 76" stroke="#533E85" stroke-width="2" stroke-linecap="round"/>
+    <line x1="74" y1="76" x2="81" y2="83" stroke="#4FD3C4" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <text x="160" y="165" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#533E85">Belum Ada Data</text>
+  <text x="160" y="185" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#7A7897">Silakan tambahkan data baru atau sesuaikan filter</text>
+</svg>
