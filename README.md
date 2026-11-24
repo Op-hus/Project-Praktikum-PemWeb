@@ -25,10 +25,10 @@ Aplikasi ini memiliki 4 hak akses (Admin, Petugas, Warga, Donatur) dengan 9 modu
 9. **Dashboard & Laporan:** Halaman ringkasan statistik (total program, total pengajuan, pengajuan disetujui, dan distribusi per kelompok rentan).
 
 ## 💻 Teknologi yang Digunakan
-* **Bahasa Pemrograman:** PHP (Native), HTML5, JavaScript
-* **Database:** MySQL / MariaDB
-* **Desain Antarmuka (UI):** CSS 3, Bootstrap 5 (Framework CSS)
-* **Web Server Lokal:** XAMPP (Apache)
+* **Bahasa Pemrograman:** PHP (Native), HTML5, JavaScript.
+* **Database:** MySQL / MariaDB.
+* **Desain Antarmuka (UI):** CSS 3, Bootstrap 5 (Framework CSS).
+* **Web Server Lokal:** XAMPP (Apache).
 
 ## 🛠️ Panduan Instalasi dan Konfigurasi
 Untuk menjalankan proyek ini di local machine, ikuti langkah-langkah berikut:
